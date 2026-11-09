@@ -55,7 +55,7 @@ client.on('connect', () => {
   client.subscribe([T.state, T.ping, T.presence]);
 });
 client.on('reconnect', () => setNet('RECONNECTING…', false));
-client.on('offline',   () => setNet('OFFLINE', false));
+client.on('offline', () => setNet('OFFLINE', false));
 client.on('error', err => setNet('ERROR: ' + err.message, false));
 
 client.on('message', (topic, buf) => {
@@ -71,9 +71,11 @@ client.on('message', (topic, buf) => {
   if (topic === T.presence) {
     const prev = roster.get(m.id);
     if (m.gone) { if (prev) prev.gone = true; return; } // broker's last will: connection lost
-    roster.set(m.id, { ...m, gone: false, first: prev ? prev.first : localNow(), last: localNow(),
-                       // the voice to hand back if this phone reloads: its latest real one
-                       given: m.fresh ? prev && prev.given : m.voice });
+    roster.set(m.id, {
+      ...m, gone: false, first: prev ? prev.first : localNow(), last: localNow(),
+      // the voice to hand back if this phone reloads: its latest real one
+      given: m.fresh ? prev && prev.given : m.voice
+    });
     if (!prev && S.mode === 'score') ensureAssigned();
     if (S.mode !== 'score' && m.fresh) giveVoice(m.id);
     return;
@@ -341,7 +343,7 @@ function refreshUI() {
   document.getElementById('scoreSel').value = S.scoreIdx;
   document.getElementById('scoreCredit').textContent = (S.score && S.score.credit) || '';
   document.getElementById('scoreErr').textContent = [...comp.errors,
-    ...comp.sounds.filter(n => missing.has(n)).map(n => `sound "${n}" not found (${soundURL(n)})`)].join(' · ');
+  ...comp.sounds.filter(n => missing.has(n)).map(n => `sound "${n}" not found (${soundURL(n)})`)].join(' · ');
   document.getElementById('assignBtn').innerHTML = score ? '⇢ &nbsp;Re-deal groups' : '⇢ &nbsp;Number voices 1…N';
   document.getElementById('driftTitle').textContent = score ? 'Live drift override' : 'Drift — Voice 2 speed';
   document.getElementById('driftHint').innerHTML = score
@@ -364,7 +366,7 @@ function renderStatus() {
   else if (S.mode === 'score') {
     const st = scoreNow();
     txt = st < 0 ? `COUNT-IN ${Math.ceil(-st)}` : st > comp.end ? 'END'
-        : `${fmtTime(st)} / ${fmtTime(comp.end)}${overriding() ? ' · OVERRIDE' : ''}`;
+      : `${fmtTime(st)} / ${fmtTime(comp.end)}${overriding() ? ' · OVERRIDE' : ''}`;
   } else txt = S.paused ? 'PHASE FROZEN' : 'RUNNING';
   document.getElementById('statusTxt').textContent = txt;
 }
@@ -418,7 +420,7 @@ const soundHue = n => [95, 20, 200, 285, 335, 0, 45, 170, 245][Math.max(0, comp.
 // exactly (sampling at even steps would smear a 20 ms attack over seconds)
 function curvePoints(pts, t0, t1) {
   return [{ t: t0, v: valueAt(pts, t0) }, ...pts.filter(p => p.t > t0 && p.t < t1),
-          { t: t1, v: valueLeft(pts, t1) }];
+  { t: t1, v: valueLeft(pts, t1) }];
 }
 
 // A layer's loudness as drawn: its gain, times a one-shot's fadeOut if any
@@ -426,7 +428,7 @@ function envelopePoints(L, tail, tEnd) {
   const pts = curvePoints(L.gain, L.start, tEnd);
   if (!tail) return pts;
   return [...pts.map(p => ({ t: p.t, v: p.v * valueAt(tail, p.t) })),
-          ...tail.filter(p => p.t > L.start && p.t < tEnd).map(p => ({ t: p.t, v: p.v * valueAt(L.gain, p.t) }))]
+  ...tail.filter(p => p.t > L.start && p.t < tEnd).map(p => ({ t: p.t, v: p.v * valueAt(L.gain, p.t) }))]
     .sort((a, b) => a.t - b.t);
 }
 
