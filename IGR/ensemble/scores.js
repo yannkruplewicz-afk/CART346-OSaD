@@ -148,19 +148,19 @@ const SCORES = [
     groups: 3,
     events: [
       // Beginning: Door sound
-      { at: '0:00', groups: 'A', play: 'yannkruplewicz/Door.wav', ratio: 1.01, fade: 5 },
+      { at: '0:00', groups: 'A', play: 'yannkruplewicz/S01.wav', ratio: 1.01, fade: 5 },
 
       // Pages enter
-      { at: '0:15', groups: 'B', play: 'yannkruplewicz/Pages.wav', ratio: 1.02, fade: 5 },
+      { at: '0:15', groups: 'B', play: 'yannkruplewicz/S02.wav', ratio: 1.02, fade: 5 },
 
       // Koff enters
-      { at: '0:30', groups: 'C', play: 'yannkruplewicz/Koff.wav', ratio: 1.01, fade: 8 },
+      { at: '0:30', groups: 'C', play: 'yannkruplewicz/S03.wav', ratio: 1.01, fade: 8 },
 
       // Whistle enters
-      { at: '0:45', groups: 'A', play: 'yannkruplewicz/Whistle.wav', ratio: 1.02, fade: 8 },
+      { at: '0:45', groups: 'A', play: 'yannkruplewicz/S04.wav', ratio: 1.02, fade: 8 },
 
       // Whistle 2 enters
-      { at: '1:00', groups: 'B', play: 'yannkruplewicz/Whistle2.wav', ratio: 1.01, fade: 8 },
+      { at: '1:00', groups: 'B', play: 'yannkruplewicz/S05.wav', ratio: 1.01, fade: 8 },
 
       // Sounds begin drifting between groups
       { at: '1:15', spread: 1.02, glide: 20 },
