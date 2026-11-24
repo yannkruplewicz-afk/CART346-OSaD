@@ -148,30 +148,30 @@ const SCORES = [
     groups: 4,
     events: [
       // S05: the city machine starts and stays as the main texture
-      { at: '0:00', groups: 'all', play: 'YOURUSERNAME/C10-S05-texture', ratio: 1.0, fade: 8, level: 0.65 },
+      { at: '0:00', groups: 'all', play: 'yannkruplewicz/S05.wav', ratio: 1.0, fade: 8, level: 0.65 },
 
       // Metallic signals interrupt the background
-      { at: '0:12', groups: 'A', play: 'YOURUSERNAME/C10-S01-impulse', loop: false, level: 0.65 },
-      { at: '0:20', groups: 'C', play: 'YOURUSERNAME/C10-S01-impulse', loop: false, level: 0.55 },
+      { at: '0:12', groups: 'A', play: 'yannkruplewicz/S01.wav', loop: false, level: 0.65 },
+      { at: '0:20', groups: 'C', play: 'yannkruplewicz/S01.wav', loop: false, level: 0.55 },
 
       // S02: turnstile rhythm enters, then spreads
-      { at: '0:30', groups: 'AB', play: 'YOURUSERNAME/C10-S02-iteration', ratio: 1.0, fade: 5, level: 0.4 },
-      { at: '0:45', groups: 'CD', play: 'YOURUSERNAME/C10-S02-iteration', ratio: 1.015, fade: 8, level: 0.35 },
+      { at: '0:30', groups: 'AB', play: 'yannkruplewicz/S02.wav', ratio: 1.0, fade: 5, level: 0.4 },
+      { at: '0:45', groups: 'CD', play: 'yannkruplewicz/S02.wav', ratio: 1.015, fade: 8, level: 0.35 },
 
       // S05 returns as a fresh layer on the other groups
-      { at: '1:00', groups: 'CD', play: 'YOURUSERNAME/C10-S05-texture', ratio: 1.005, fade: 10, level: 0.4 },
+      { at: '1:00', groups: 'CD', play: 'yannkruplewicz/S05.wav', ratio: 1.005, fade: 10, level: 0.4 },
 
       // The city machine accelerates and drifts
       { at: '1:15', spread: 1.006, glide: 20 },
-      { at: '1:25', groups: 'A', play: 'YOURUSERNAME/C10-S04-gesture', loop: false, fade: 2, level: 0.5 },
+      { at: '1:25', groups: 'A', play: 'yannkruplewicz/S04.wav', loop: false, fade: 2, level: 0.5 },
 
       // FM hum enters while the rhythm fades away
-      { at: '1:40', groups: 'BC', play: 'YOURUSERNAME/C10-S03-continuation_FAV', ratio: 1.0, fade: 12, level: 0.45 },
-      { at: '1:40', groups: 'AB', stop: 'YOURUSERNAME/C10-S02-iteration', fade: 12 },
+      { at: '1:40', groups: 'BC', play: 'yannkruplewicz/S03.wav', ratio: 1.0, fade: 12, level: 0.45 },
+      { at: '1:40', groups: 'AB', stop: 'yannkruplewicz/S02.wav', fade: 12 },
 
       // S05 becomes dominant again
-      { at: '2:00', groups: 'all', play: 'YOURUSERNAME/C10-S05-texture', ratio: 1.0, fade: 12, level: 0.7 },
-      { at: '2:15', groups: 'D', play: 'YOURUSERNAME/C10-S01-impulse', loop: false, level: 0.45 },
+      { at: '2:00', groups: 'all', play: 'yannkruplewicz/S05.wav', ratio: 1.0, fade: 12, level: 0.7 },
+      { at: '2:15', groups: 'D', play: 'yannkruplewicz/S01.wav', loop: false, level: 0.45 },
 
       // Slow drift, then the whole city powers down
       { at: '2:25', spread: 1.0, glide: 10 },

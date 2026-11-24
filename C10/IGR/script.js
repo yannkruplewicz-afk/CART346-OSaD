@@ -3,16 +3,16 @@
 // Paths are relative to this folder, e.g. 'C04-S01-my-sound.wav'.
 // ═══════════════════════════════════════════════════════════════════════════════
 const SOUNDS = [
-  'assets/yannkruplewicz/Door.wav',
-  'assets/yannkruplewicz/Pages.wav',
-  'assets/yannkruplewicz/Koff.wav',
-  'assets/yannkruplewicz/Whistle.wav',
-  'assets/yannkruplewicz/Whistle2.wav',
+  'assets/yannkruplewicz/S01.wav',
+  'assets/yannkruplewicz/S02.wav',
+  'assets/yannkruplewicz/S03.wav',
+  'assets/yannkruplewicz/S04.wav',
+  'assets/yannkruplewicz/S05.wav',
 ];
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // THEME
-// ═══════════════════════════════════════════════════════════════════════════════
+// ══════════════════════════════════
 function themeColor(name) {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 }
